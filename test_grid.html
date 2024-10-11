@@ -33,21 +33,35 @@
         grid-auto-rows: auto;
         font-size: 0.875em;
       }
-
+      .inner-title {
+        display: flex;
+      }
       .inner-item {
         border-radius: 5px;
         background-color: #ffd6ff;
         display: grid;
+        grid-template-rows: 0.7rem 1fr;
+        height: 100%;
         grid-gap: 2%;
-        align-content: space-evenly;
         padding: 2%;
+        font-size: .8rem;
       }
-
+      .inner-item-sub {
+        display: flex;
+      }
+      div.INVESTMENT .inner-item-sub-KOS {
+        background: pink;
+        padding: 0;
+        margin: 0;
+        border: 0;
+      }
       .subdim-item {
         border-radius: 4px;
         border: 1px solid black;
-        grid-row: 2 / -1;
-        display: inline-table;
+        display: flex;
+        margin: 2%;
+        width: 100%;
+        flex-direction: column;
         padding: 0%;
       }
 
