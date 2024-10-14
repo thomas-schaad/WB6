@@ -1,104 +1,144 @@
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap");
 
-      .grid {
-        display: grid;
-        width: 97.3vw;
-        height: 80vh;
-        border-radius: 15px;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 5px;
-      }
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap");
 
-      .subgrid {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-      }
+    .grid {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      grid-template-columns: repeat(5, 1fr);
+    }
 
-      .item {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1.1rem repeat(auto-fit, minmax(10px, 1fr));
-        gap: 7px;
-        padding: 11px;
-        margin: 1px;
-        border-radius: 15px;
-        border: 1px solid black;
-        grid-auto-rows: auto;
-        font-size: 0.875em;
-      }
-      .inner-title {
-        display: flex;
-      }
-      .inner-item {
-        border-radius: 5px;
-        background-color: #ffd6ff;
-        display: grid;
-        grid-template-rows: 0.7rem 1fr;
-        height: 100%;
-        grid-gap: 2%;
-        padding: 2%;
-        font-size: .8rem;
-      }
-      .inner-item-sub {
-        display: flex;
-      }
-      div.INVESTMENT .inner-item-sub-KOS {
-        background: pink;
-        padding: 0;
-        margin: 0;
-        border: 0;
-      }
-      .subdim-item {
-        border-radius: 4px;
-        border: 1px solid black;
-        display: flex;
-        margin: 2%;
-        width: 100%;
-        flex-direction: column;
-        padding: 0%;
-      }
+    .subgrid {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
 
-      .indicator-item {
-        border-radius: 4px;
-        border: 1px solid black;
-        grid-row: 1 / -1;
-        display: grid;
-        margin: 7%;
+    .item {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1.1rem repeat(auto-fit, minmax(10px, 1fr));
+      gap: 4px;
+      padding: 8px;
+      margin: 4px;
+      border-radius: 15px;
+      border: 1px solid black;
+      grid-auto-rows: auto;
+      font-size: 0.875em;
+    }
 
-        justify-content: center;
-      }
+    .inner-title {
+      display: flex;
+    }
 
-      .title {
-        font-weight: normal;
-        font-size: 0.8rem;
-        grid-column: 1 / -1;
-      }
+    .inner-item {
+      border-radius: 5px;
+      display: grid;
+      grid-template-rows: 0.7rem 1fr;
+      height: 100%;
+      grid-gap: 3%;
+      padding: 3%;
+      font-size: .6rem;
+    }
 
-      .SubdimTitle {
-        height: 5%;
-        width: 5%;
-        font-weight: normal;
-        position: absolute;
-        font-size: 0.8rem;
-        z-index: 1;
-      }
+    .inner-item-sub {
+      display: flex;
+    }
 
-      .AlB {
-        background-color: #89d375;
-      }
-    </style>
-  </head>
+    /* --------------------------------------------- */
 
-  <body>
-    <div class="grid"></div>
+    div.TRANSPORT .inner-item-sub-BIH .subdim-item,
+    div.TRANSPORT .inner-item-sub-MKD .subdim-item,
+    div.INNOVATION .inner-item-sub-BIH .subdim-item,
+    div.INNOVATION .inner-item-sub-KOS .subdim-item,
+    div.ANTI_CORRUPTION .inner-item-sub-BIH .subdim-item,
+    div.TOURISM .inner-item-sub-BIH .subdim-item {
+      /* background-color: pink; */
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
 
-    <script src="test_grid.js"></script>
-  </body>
+    div.INNOVATION .inner-item-sub-BIH .subdim-item .indicator-item {
+      width: 100%;
+      margin: 3%;
+    }
+
+    /* --------------------------------------------- */
+
+    div.ANTI_CORRUPTION .inner-item-sub-BIH .subdim-item .indicator-item {
+      width: 100%;
+      margin: 2%;
+    }
+
+    /* --------------------------------------------- */
+    div.TRANSPORT .inner-item-sub-KOS .subdim-item .indicator-item,
+    div.ENTERPRISE .inner-item-sub-MKD .subdim-item .indicator-item,
+    div.ENTERPRISE .inner-item-sub-ALB .subdim-item .indicator-item {
+      margin: 1%;
+    }
+
+    /* --------------------------------------------- */
+
+    div.TOURISM .inner-item-sub-BIH .subdim-item .indicator-item,
+    div.INNOVATION .inner-item-sub-KOS .subdim-item .indicator-item,
+    div.TRANSPORT .inner-item-sub-BIH .subdim-item .indicator-item,
+    div.TRANSPORT .inner-item-sub-MKD .subdim-item .indicator-item {
+      width: 100%;
+    }
+
+    /* --------------------------------------------- */
+
+    .subdim-item {
+      border-radius: 2px;
+      border: 0.8px solid black;
+      display: flex;
+      margin: 1%;
+      width: 100%;
+      flex-direction: column;
+      padding: 2%;
+    }
+
+    .indicator-item {
+      border-radius: 3px;
+      border: 0.6px solid black;
+      grid-row: 1 / -1;
+      display: grid;
+      margin: 3%;
+      justify-content: center;
+    }
+
+    .title {
+      font-weight: normal;
+      font-size: 0.8rem;
+      grid-column: 1 / -1;
+    }
+
+    .SubdimTitle {
+      height: 5%;
+      width: 5%;
+      font-weight: normal;
+      position: absolute;
+      font-size: 0.8rem;
+      z-index: 1;
+    }
+
+    .AlB {
+      background-color: #89d375;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid"></div>
+
+  <script src="test_grid.js"></script>
+</body>
+
 </html>
